@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
-    'bootstrap4'
+    'bootstrap4',
     'stdimage'
 ]
 
@@ -59,7 +59,7 @@ ROOT_URLCONF = 'djangoMysql.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'djangoMysql.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django-mysql',
+        'NAME': 'django_mysql',
         'USER': 'root',
         'PASSWORD': 'my-secret-pw',
         'HOST': 'localhost',
@@ -112,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'pt/br'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'America/Sao_Paulo'
 
@@ -131,3 +131,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+"""
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = '73269dc34a0a0f'
+EMAIL_HOST_PASSWORD = '64da0d4f5f2666'
+EMAIL_PORT = '2525'
+"""
