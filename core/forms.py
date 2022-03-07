@@ -1,6 +1,7 @@
-from email import header
 from django import forms
 from django.core.mail.message import EmailMessage
+
+from core.models import Product
 
 
 class ContactForm(forms.Form):
@@ -25,3 +26,9 @@ class ContactForm(forms.Form):
             to=['contato@email.com']
         )
         mail.send()
+
+
+class ProductModelForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ['name', 'price', 'stock', 'image']
